@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tudo sobre o Google Glass</title>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+
+</head>
+<script language="javascript" src="javascript/funcoes.js"></script>
+<script>
+    function calc_total() {
+        let qtd = parseInt(document.getElementById('cQtd').value);
+        tot = qtd * 4300;
+        document.getElementById('cTot').value = tot;
+    }
+</script>
+
+<body>
+<div id="interface">
+    <header id="cabecalho">
+
+    <hgroup>  
+        <h1>Google Glass</h1>
+        <h2>A revolução do Google está chegando</h2>
+    </hgroup>
+
+    <img id="icone" src="imagens/mencao.png">
+
+<nav id="menu"> 
+<h1>Menu Principal</h1>
+<ul>
+    <li onmouseover="mudaFoto('imagens/casa.png')" onmouseout="mudaFoto('imagens/mencao.png')"><a href="index.html">Home</a></li>
+    <li onmouseover="mudaFoto('imagens/folha.png')" onmouseout="mudaFoto('imagens/mencao.png')"><a href="specs.html">Especificações</a></li>
+    <li onmouseover="mudaFoto('imagens/fotografia.png')" onmouseout="mudaFoto('imagens/mencao.png')"><a href="fotos.html">Fotos</a></li>
+    <li onmouseover="mudaFoto('imagens/edicao-de-video.png')" onmouseout="mudaFoto('imagens/mencao.png')"><a href="multimidia.html">Multimídia</a></li>
+    <li onmouseover="mudaFoto('imagens/mencao.png')" onmouseout="mudaFoto('imagens/mencao.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+</ul>
+    </header>
+</nav>
+
+<section id="corpo-full">
+
+<article id="noticia-principal">
+<header id="cabecalho-artigo">    
+    <hgroup>
+    <h3>Fale Conosco > Contato</h3>         
+    <h1>Formulário de Contato</h1>
+    <h2>por Carlos Pitanga</h2>
+    <h3 class="data">Atualizado em 01/Maio/2013</h3>
+    </hgroup>
+</header>
+
+<form method="POST" id="fContato" action="mailto:contato@googleglass.com" oninput="calc_total();"> 
+    <fieldset id="usuario">    
+    <legend>Identificação do Usuário</legend>
+        <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="36" maxlength="50" placeholder="Nome Completo"></p>
+        <p><label for="cSenha">Senha:</label> <input type="password" name="tSenha" id="cSenha" size="35" maxlength="10" placeholder="Digite sua senha"></p>
+        <p><label for="cEmail">E-mail:</label> <input type="email" name="tEmail" id="cEmail" size="35" maxlength="35" placeholder="Digite seu Email"></p>
+        <fieldset id="sexo">
+        <legend>Sexo</legend>
+            <input type="radio" name="tSexo" id="cMasc" checked> <label for="cMasc">Masculino</label> <br>
+            <input type="radio" name="tSexo" id="cFem"><label for="cFem">Feminino</label>
+        </fieldset>   
+       <p>Data de Nascimento: <input type="date" name="tData" id="cData"></input></p> 
+    </fieldset>
+
+    <fieldset id="endereco">
+    <legend>Endereço do Usuário</legend>
+        <p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" size="30" maxlength="80" placeholder="Rua, Avenida"></p>
+        <p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" min="0" max="9999"></p> 
+        <p><label for="cEst">Estado:</label> <select name="tEst" id="cEst"> <optgroup label="Escola seu Estado">
+                                                                            <option value="AM">Amazonas</option>
+                                                                            <option value="RR">Roraima</option>
+                                                                            <option value="AP">Amapá</option>
+                                                                            <option value="PA">Pará</option>
+                                                                            <option value="TO">Tocantins</option>
+                                                                            <option value="RO">Rondônia</option>
+                                                                            <option value="AC">Acre</option></option>
+                                                                            <option value="MA">Maranhão</option>
+                                                                            <option value="PI">Piauí</option>
+                                                                            <option value="CE">Ceará</option>
+                                                                            <option value="RN">Rio Grande do Norte</option>
+                                                                            <option value="PE">Pernambuco</option>
+                                                                            <option value="PB">Paraíba</option>
+                                                                            <option value="SE">Sergipe</option>
+                                                                            <option value="AL">Alagoas</option>
+                                                                            <option value="BA">Bahia</option>
+                                                                            <option value="GO">Goiás</option>
+                                                                            <option value="MS">Mato Grosso do Sul</option>
+                                                                            <option value="MT">Mato Grosso</option>
+                                                                            <option value="SP">São Paulo</option>
+                                                                            <option value="RJ">Rio de Janeiro</option>
+                                                                            <option value="MG">Minas Gerais</option>
+                                                                            <option value="ES">Espirito Santo</option>
+                                                                            <option value="PR">Paraná</option>
+                                                                            <option value="RS">Rio Grande do Sul</option>
+                                                                            <option value="SC">Santa Catarina</option> 
+                                                                            </optgroup> </select></p>
+
+        <p><label for="cCid">Cidade:</label> <input type="text" name="tCid" id="cCid" size="19" maxlength="30" list="cidades" placeholder="Digite sua Cidade"> <datalist id="cidades">
+                                                                            <option value="Rio Branco"></option>
+                                                                            <option value="Maceió"></option>
+                                                                            <option value="Macapá"></option>
+                                                                            <option value="Manaus"></option>
+                                                                            <option value="Salvador"></option>
+                                                                            <option value="Fortaleza"></option>
+                                                                            <option value="Brasília"></option>
+                                                                            <option value="Vitória"></option>
+                                                                            <option value="Goiânia"></option>
+                                                                            <option value="São Luís"></option>
+                                                                            <option value="Cuiabá"></option>
+                                                                            <option value="Campo Grande"></option>
+                                                                            <option value="Belo Horizonte"></option>
+                                                                            <option value="Belém"></option>
+                                                                            <option value="João Pessoa"></option>
+                                                                            <option value="Curitiba"></option>
+                                                                            <option value="Recife"></option>
+                                                                            <option value="Teresina"></option>
+                                                                            <option value="Rio de Janeiro"></option>
+                                                                            <option value="Natal"></option>
+                                                                            <option value="Porto Alegre"></option>
+                                                                            <option value="Porto Velho"></option>
+                                                                            <option value="Boa Vista"></option>
+                                                                            <option value="Florianópolis"></option>
+                                                                            <option value="São Paulo"></option>
+                                                                            <option value="Aracaju"></option>
+                                                                            <option value="Palmas"></option> </datalist></p>
+    </fieldset>
+
+    <fieldset id="mensagem">
+<legend>Mensagem do Usuário</legend>
+   <p><label for="cUrg">Grau de Urgência: Mín<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="5"></label> Max</p> 
+   <p><label for="cMsg">Mensagem: </label><textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Digite sua mensagem aqui"></textarea> </p>
+    </fieldset>
+
+    <fieldset id="pedido">
+<legend>Quero um Google Glass</legend>
+    <p><input type="checkbox" name="tPad" id="cPad" checked><label for="cPed">Gostaria de adquirir um Google Glass quando disponível? </label> </p>
+    <p><label for="cCor">Cor: </label> <input type="color" name="tCor" id="cCor" value="black"> </p>
+    <p><label for="cQtd">Quantidade: </label>  <input type="number" name="tQtd" id="cQtd" min="0" max="10" value="0"> </p>
+    <p><label for="cTot">Preço Total: R$ </label> <input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly> </p>
+    </fieldset>
+
+<input id="botao" type="submit" value="Enviar">
+</form>
+
+<footer id="rodape">
+    <p>Copyright&copy; 2013 - by Carlos Pitanga<br>
+    <a href="" target="_blank">Facebook</a> | <a href="" target="_blank">Twitter</a></p>
+    </footer>
+    </div>
+    
+    </body>
+    
+    </html>
